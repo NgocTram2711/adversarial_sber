@@ -20,6 +20,7 @@ for i in $(seq 1 10); do
         --samples 500
 
     PYTHONPATH=. python advsber/commands/evaluate.py ${RESULTS_DIR}/${filename}/output.json \
+        --output-path=${OUTPUT_PATH} \
         --save-to=${RESULTS_DIR}/${filename}/metrics.json \
         --target-clf-path="./presets/age/models/target_clf/lstm_with_amounts.tar.gz"
 
@@ -36,6 +37,7 @@ for i in $(seq 1 10); do
         PYTHONPATH=. python advsber/commands/attack.py configs/attackers/wer_exp/${config_path} \
         --samples 500
     PYTHONPATH=. python advsber/commands/evaluate.py ${RESULTS_DIR}/${filename}/output.json \
+        --output-path=${OUTPUT_PATH} \
         --save-to=${RESULTS_DIR}/${filename}/metrics.json \
         --target-clf-path="./presets/age/models/target_clf/lstm_with_amounts.tar.gz"
 
@@ -52,6 +54,7 @@ for i in $(seq 1 10); do
         --samples 500
 
     PYTHONPATH=. python advsber/commands/evaluate.py ${RESULTS_DIR}/${filename}/output.json \
+        --output-path=${OUTPUT_PATH} \
         --save-to=${RESULTS_DIR}/${filename}/metrics.json \
         --target-clf-path="./presets/age/models/target_clf/lstm_with_amounts.tar.gz"
 done

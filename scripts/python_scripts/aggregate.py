@@ -24,3 +24,6 @@ def main(results_path: Path, filename: str = "metrics.json"):
     output_path = str(results_path / "metrics.csv")
     typer.secho(f"Saving results to {output_path}", fg="green")
     metrics.to_csv(output_path, index=False)
+
+if __name__ == "__main__":
+    typer.run(main)

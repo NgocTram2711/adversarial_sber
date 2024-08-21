@@ -29,6 +29,7 @@ for dataset_name in "age" "gender"; do
             PYTHONPATH=. python advsber/commands/attack.py ${config_path} --samples ${NUM_SAMPLES}
 
         PYTHONPATH=. python advsber/commands/evaluate.py ${RESULTS_PATH}/output.json \
+            --output-path=${OUTPUT_PATH} \
             --save-to=${RESULTS_PATH}/metrics.json \
             --target-clf-path=${PRESETS_DIR}/${dataset_name}/models/target_clf/${TARGET_CONFIG_NAME}.tar.gz
     done

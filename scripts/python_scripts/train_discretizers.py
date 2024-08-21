@@ -23,13 +23,13 @@ def main(dataset_name: str):
     dis = KBinsDiscretizer(n_bins=100, encode='ordinal', strategy='quantile')
     dis.fit(amounts)
 
-    with open('presets/' + dataset_name + '/discretizers/100_quantile', 'wb') as f:
+    with open('../presets/' + dataset_name + '/discretizers/100_quantile', 'wb') as f:
         pickle.dump(dis, f)
     
     dis = KBinsDiscretizer(n_bins=50, encode='ordinal', strategy='quantile')
     dis.fit(amounts)
 
-    with open('presets/' + dataset_name + '/discretizers/50_quantile', 'wb') as f:
+    with open('../presets/' + dataset_name + '/discretizers/50_quantile', 'wb') as f:
         pickle.dump(dis, f)
     
     return

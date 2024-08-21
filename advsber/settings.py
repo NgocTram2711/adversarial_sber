@@ -12,7 +12,6 @@ MASK_TOKEN = "@@MASK@@"
 
 ModelsInput = Dict[str, Union[TextFieldTensors, torch.Tensor]]
 
-
 @dataclass_json
 @dataclass
 class TransactionsData:

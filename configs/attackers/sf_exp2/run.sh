@@ -11,6 +11,7 @@ for i in $(seq 0 201); do
         --samples 500
 
     PYTHONPATH=. python advsber/commands/evaluate.py ${RESULTS_DIR}/${i}/output.json \
+        --output-path=${OUTPUT_PATH} \
         --save-to=${RESULTS_DIR}/${i}/metrics.json \
         --target-clf-path="./presets/age/models/target_clf/lstm_with_amounts.tar.gz"
 
